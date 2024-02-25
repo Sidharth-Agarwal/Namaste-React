@@ -33,6 +33,7 @@ const parent = React.createElement("div", {id:"parent"}, [
 // For that "JSX" was introduced
 // The "JSX" thing will be discuss in further lectures
 
+// const parent = React.createElement("", {}, "")
 console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);

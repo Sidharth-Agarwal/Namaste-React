@@ -6,13 +6,33 @@
     <title>Namaste React</title>
 </head>
 <body>
+    <h1>This tag is before the root</h1>
     <div id="root">
+        <p>This is a para tag</p>
+        <p>This is a para tag</p>
+        <p>This is a para tag</p>
+        <p>This is a para tag</p>
     </div>
+    <h1>This tag is after the root</h1>
+    <!-- If there is/are some tag already present in the tag
+    And some change are made in the tag using React
+    Then all the element originally present in the tag will be replaced by the elements in the react file -->
+    <!-- Even if the React element is empty, then also the elements present will be replaced -->
+    <!-- Also on the tag selected in the react is affected.
+    The tags before and after the selected tag will remain the same -->
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
     <script src="4MakingNestedStructure.js">
     </script>
+
+    <!-- The order the files is also very important here -->
+    <!-- 
+    <script src="4MakingNestedStructure.js"> </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    -->
+    <!-- If we write the code like this, it will throw an error and nothing will be redered on the screen -->
 </body>
 </html>
