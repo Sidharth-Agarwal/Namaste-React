@@ -1,0 +1,21 @@
+{
+  "name": "2.-igniting-your-app",
+  "version": "1.0.0",
+  "description": "This is the first react project in the series",
+  "main": "MakingNestedStructure.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sidharth-Agarwal/Namaste-React.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Sidharth Agarwal",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
