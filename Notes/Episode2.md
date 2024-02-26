@@ -1,3 +1,4 @@
+<!-- 
 # _Episode 02 - Igniting Our App_
 
 ## Q: What is `npm`?
@@ -127,4 +128,5 @@ Parcel's default directory for your output is named dist . The --dist-dir public
 
 ## Q: What is `browserlists`?
 
-A: Browserslist defines and shares the list of target browsers between various frontend build tools.
+A: Browserslist defines and shares the list of target browsers between various frontend build tools. 
+-->
