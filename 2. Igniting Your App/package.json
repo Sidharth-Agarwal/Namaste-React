@@ -2,7 +2,6 @@
   "name": "2.-igniting-your-app",
   "version": "1.0.0",
   "description": "This is the first react project in the series",
-  "main": "MakingNestedStructure.js",
   "scripts": {
     "test": "jest"
   },

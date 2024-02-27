@@ -18,7 +18,7 @@
 // Then we have to define all the children of the parent individually in the array
 
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 const parent = React.createElement("div", {id:"parent"}, [
     React.createElement("div", {id:"child1"},[
