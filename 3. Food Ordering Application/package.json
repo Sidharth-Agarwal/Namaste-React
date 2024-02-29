@@ -1,0 +1,14 @@
+{
+  "name": "3.-food-ordering-application",
+  "version": "1.0.0",
+  "description": "Food Ordering Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sidharth Agarwal",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
