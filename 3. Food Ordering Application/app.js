@@ -51,7 +51,7 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-
+                <RestaurantCard/>
             </div>
         </div>
     )
