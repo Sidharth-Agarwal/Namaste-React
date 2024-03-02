@@ -12,7 +12,11 @@ High Level Layout -:
 1. Search
 2. Restaurant Container
     a. Restaurant Card
-
+        i. Image
+        ii. Name of the restaurant
+        iii. Star Rating
+        iv. cuisines
+        v. delivery time
 -> Footer
 1. Copyright
 2. Links
@@ -38,10 +42,14 @@ const Header = () => {
     )
 }
 
+const styleCard = {
+    backgroundColor:"grey"
+}
+
 const RestaurantCard = () => {
     return (
-        <div className="res-card">
-            
+        <div className="res-card" style={styleCard}>
+            <h3>Meghana Foods</h3>
         </div>
     )
 }
@@ -61,6 +69,7 @@ const AppLayout = () => {
     return (
         <div className="app">
             <Header/>
+            <Body/>
         </div>
     )
 }
