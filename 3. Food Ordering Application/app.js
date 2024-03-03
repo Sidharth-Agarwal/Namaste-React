@@ -42,14 +42,19 @@ const Header = () => {
     )
 }
 
+// In a JSX file, inline css is using JavaScript objects
 const styleCard = {
-    backgroundColor:"grey"
+    backgroundColor:"#f0f0f0"
 }
 
 const RestaurantCard = () => {
     return (
         <div className="res-card" style={styleCard}>
+            <img className="res-logo" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"/>
             <h3>Meghana Foods</h3>
+            <h4>Biryani, North Indian, Asian</h4>
+            <h4>4.3 Stars</h4>
+            <h4>38 minutes</h4>
         </div>
     )
 }
