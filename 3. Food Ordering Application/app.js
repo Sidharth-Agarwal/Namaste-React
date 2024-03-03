@@ -116,17 +116,42 @@ const styleCard = {
 // }
 
 // Taking in Actual data from Swiggy to pass into props
+// const RestaurantCard = (props) => {
+//     const {resData} = props
+//     console.log(resData);
+//     return (
+//         <div className="res-card" style={styleCard}>
+//             <img className="res-logo" src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' + resData.data.cloudinaryImageId}/>
+//             <h3>{resData.data.name}</h3>
+//             <h4>{resData.data.cuisines.join(', ')}</h4>
+//             <h4>{resData.data.avgRating} stars</h4>
+//             <h4>₹{resData.data.costForTwo / 100} for two</h4>
+//             <h4>{resData.data.deliveryTime} minutes</h4>
+//         </div>
+//     )
+// }
+
+// Cleaning up the restaurant card component
 const RestaurantCard = (props) => {
     const {resData} = props
-    console.log(resData);
+
+    const {
+        cloudinaryImageId,
+        name,
+        avgRating,
+        cuisines,
+        costForTwo,
+        deliveryTime
+    } = resData?.data;
+
     return (
         <div className="res-card" style={styleCard}>
             <img className="res-logo" src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/' + resData.data.cloudinaryImageId}/>
-            <h3>{resData.data.name}</h3>
-            <h4>{resData.data.cuisines.join(', ')}</h4>
-            <h4>{resData.data.avgRating} stars</h4>
-            <h4>₹{resData.data.costForTwo / 100} for two</h4>
-            <h4>{resData.data.deliveryTime} minutes</h4>
+            <h3>{name}</h3>
+            <h4>{cuisines.join(', ')}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>₹{costForTwo / 100} for two</h4>
+            <h4>{deliveryTime} minutes</h4>
         </div>
     )
 }
@@ -2180,7 +2205,7 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard resData = {resList[0]} />
+                {/* <RestaurantCard resData = {resList[0]} />
                 <RestaurantCard resData = {resList[1]} />
                 <RestaurantCard resData = {resList[2]} />
                 <RestaurantCard resData = {resList[3]} />
@@ -2194,7 +2219,10 @@ const Body = () => {
                 <RestaurantCard resData = {resList[11]} />
                 <RestaurantCard resData = {resList[12]} />
                 <RestaurantCard resData = {resList[13]} />
-                <RestaurantCard resData = {resList[14]} />                
+                <RestaurantCard resData = {resList[14]} /> */}
+                {resList.map((restaurant) => (
+                    <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+                ))}
             </div>
         </div>
     )
