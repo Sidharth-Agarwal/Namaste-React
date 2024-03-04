@@ -7,6 +7,11 @@ import { useState } from "react";
 const Body = () => {
     // Local State Variable
     const [listOfRestaurants, setListOfRestaurant] = useState(resList);
+
+    // This can also by written in this way
+    // const arr = useState(resList);
+    // const [listOfRestaurants, setListOfRestaurant] = arr;
+    // This is array de-strucuting which is done in react
     
     return (
         <div className="body">
@@ -21,7 +26,8 @@ const Body = () => {
                         (res) => res.data.avgRating > 4
                     );
                     setListOfRestaurant(filteredList);
-                }} className="filter-btn">Top Rated Restaurants</button>
+                }} className="filter-btn">Top Rated Restaurants
+                </button>
             </div>
             <div className="res-container">
                 {listOfRestaurants.map((restaurant) => (
