@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockdata";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
     // Local State Variable
@@ -12,6 +12,22 @@ const Body = () => {
     // const arr = useState(resList);
     // const [listOfRestaurants, setListOfRestaurant] = arr;
     // This is array de-strucuting which is done in react
+
+    // This callback function is called as soon as the body component is rendered
+    // If you have to do something after rendering the component - write it inside useEffect
+    useEffect(()=>{
+        // console.log("Use effect called");
+        fetchData();
+    }, []);
+
+    // console.log("Body Called");
+    // After the fetch call is successfully done the react will re-render the existing page with the new data
+    const fetchData = async () => {
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING');
+        const json = await data.json();
+        console.log(json);
+        // setListOfRestaurant(json.)
+    }
     
     return (
         <div className="body">
