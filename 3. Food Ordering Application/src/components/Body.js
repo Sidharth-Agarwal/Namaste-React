@@ -24,6 +24,7 @@ const Body = () => {
 
     // console.log("Body Called");
     // After the fetch call is successfully done the react will re-render the existing page with the new data
+    // Conditional Rendering
     const fetchData = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
@@ -39,11 +40,15 @@ const Body = () => {
 
     // Use Shimmer UI instead
     // This means load a fake page until the actual page is being loaded
-    if(listOfRestaurants.length === 0){
-        return (<Shimmer/>)
-    }
+    // Conditional Rendering
+    // if(listOfRestaurants.length === 0){
+    //     return (<Shimmer/>)
+    // }
     
-    return (
+    // Added ternary operator for the conditional rendering
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer/>
+    ) : (
         <div className="body">
             <div className="filter">
                 <button onClick={() => {
