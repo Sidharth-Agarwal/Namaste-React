@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
     // Local State Variable
-    const [listOfRestaurants, setListOfRestaurant] = useState(resList);
+    // const [listOfRestaurants, setListOfRestaurant] = useState([resData]);
+    const [listOfRestaurants, setListOfRestaurant] = useState([]);
 
     // This can also by written in this way
     // const arr = useState(resList);
@@ -26,7 +27,7 @@ const Body = () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
         console.log(json);
-        // setListOfRestaurant(json.)
+        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     
     return (
@@ -39,15 +40,20 @@ const Body = () => {
                     // );
                     // console.log(resList1);
                     const filteredList = listOfRestaurants.filter(
-                        (res) => res.data.avgRating > 4
+                        (res) => res.info.avgRating > 4
                     );
                     setListOfRestaurant(filteredList);
                 }} className="filter-btn">Top Rated Restaurants
                 </button>
             </div>
-            <div className="res-container">
+            {/* <div className="res-container">
                 {listOfRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+                ))}
+            </div> */}
+            <div className="res-container">
+                {listOfRestaurants.map((restaurant) => (
+                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
                 ))}
             </div>
         </div>
