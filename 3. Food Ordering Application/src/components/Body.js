@@ -51,6 +51,9 @@ const Body = () => {
     ) : (
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    
+                </div>
                 <button onClick={() => {
                     // Filter logic here
                     // listOfRestaurants = listOfRestaurants.filter(
