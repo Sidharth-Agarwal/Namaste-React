@@ -9,6 +9,7 @@ const Body = () => {
     // Local State Variable
     // const [listOfRestaurants, setListOfRestaurant] = useState([resData]);
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
     // This can also by written in this way
     // const arr = useState(resList);
@@ -29,7 +30,8 @@ const Body = () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
         console.log(json);
-        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     // This can be used while the data is being fetched from the API
@@ -44,6 +46,16 @@ const Body = () => {
     // if(listOfRestaurants.length === 0){
     //     return (<Shimmer/>)
     // }
+
+    // Whatever the user type in the input box, we have to bind the value with a local state variable
+    // Initially the input box would not work because the
+    // "value" of the input box is tied to the searchText state variable and it is empty
+    // To avoid this we have to add an onChange handler
+
+    // console.log("Body Rendered");
+    // Body will be re-rendered whenever there is any change in state variable
+    // (Triggers a reconciliation cycle)
+    const [searchText, setSearchText] = useState("");
     
     // Added ternary operator for the conditional rendering
     return listOfRestaurants.length === 0 ? (
@@ -52,8 +64,17 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box" />
-                    <button>Search</button>
+                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+                        setSearchText(e.target.value)
+                    }} />
+                    <button onClick={() => {
+                        // Filter the restaurant card and update the UI
+                        // Search text
+                        // console.log(searchText)
+                        const filteredRestaurants = listOfRestaurants.filter((res) => 
+                            res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setFilteredRestaurant(filteredRestaurants);
+                    }}>Search</button>
                 </div>
                 <button onClick={() => {
                     // Filter logic here
@@ -74,7 +95,7 @@ const Body = () => {
                 ))}
             </div> */}
             <div className="res-container">
-                {listOfRestaurants.map((restaurant) => (
+                {filteredRestaurant.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData={restaurant} />
                 ))}
             </div>
