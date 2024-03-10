@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockdata";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     // Local State Variable
@@ -38,7 +39,9 @@ const Body = () => {
 
     // Use Shimmer UI instead
     // This means load a fake page until the actual page is being loaded
-    
+    if(listOfRestaurants.length === 0){
+        return (<Shimmer/>)
+    }
     
     return (
         <div className="body">
