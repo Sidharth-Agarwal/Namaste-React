@@ -29,6 +29,16 @@ const Body = () => {
         console.log(json);
         setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
+
+    // This can be used while the data is being fetched from the API
+    // But this is not the standard practice in the industry right now
+    // if(listOfRestaurants.length === 0){
+    //     return <h1>Loading...</h1>
+    // }
+
+    // Use Shimmer UI instead
+    // This means load a fake page until the actual page is being loaded
+    
     
     return (
         <div className="body">
