@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockdata";
+// import resList from "../utils/mockdata";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
