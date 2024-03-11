@@ -58,7 +58,7 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
     
     // Added ternary operator for the conditional rendering
-    return listOfRestaurants.length === 0 ? (
+    return filteredRestaurant.length === 0 ? (
         <Shimmer/>
     ) : (
         <div className="body">
