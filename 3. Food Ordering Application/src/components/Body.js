@@ -82,10 +82,10 @@ const Body = () => {
                     //     (res) => res.data.avgRating>4
                     // );
                     // console.log(resList1);
-                    const filteredList = listOfRestaurants.filter(
+                    const filteredList = filteredRestaurant.filter(
                         (res) => res.info.avgRating > 4
                     );
-                    setListOfRestaurant(filteredList);
+                    setFilteredRestaurant(filteredList);
                 }} className="filter-btn">Top Rated Restaurants
                 </button>
             </div>
