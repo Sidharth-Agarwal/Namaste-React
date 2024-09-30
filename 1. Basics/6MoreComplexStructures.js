@@ -1,4 +1,4 @@
-
+// Creating this structure using React.createElement
 
 /* <div id="parent">
     <div id="child1">
