@@ -1,0 +1,14 @@
+{
+  "name": "2.-igniting-our-application",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sidharth Agarwal",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
