@@ -2,7 +2,11 @@
   "name": "2.-igniting-our-application",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start1": "parcel index.html",
+    "start2": "parcel index2.html",
+    "build1": "parcel build index.html",
+    "build2": "parcel build index2.html"
   },
   "author": "Sidharth Agarwal",
   "license": "ISC",
