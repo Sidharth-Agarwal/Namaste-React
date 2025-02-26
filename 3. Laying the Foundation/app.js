@@ -10,7 +10,11 @@ import ReactDOM from "react-dom/client"
 // JSX is HTML-like or XML-like Syntax
 // Creating React Element using JSX
 // JSX(transpilation - By Parcel using Babel) => React Element - JS Object => HTML Element(on render)
+// Transpilation - Conversion of the code from one language to another.
 // --------------------------------------------------------------------------------------------------
-const jsxHeading = <h1 id="heading"> Hello from JSX </h1>;
+const jsxHeading = (
+    <h1 className="heading"> 
+        Hello from JSX 
+    </h1>);
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(jsxHeading)
