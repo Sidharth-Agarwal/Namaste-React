@@ -15,11 +15,12 @@ const Body = () => {
   }, [])
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-    const jsonData = await data.json()
+    console.log("hello")
+    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data = await response.json()
+    console.log(data)
   };
-
-  console.log(fetchData)
+  const data = fetchData()
 
   return(
       <div className="body">
